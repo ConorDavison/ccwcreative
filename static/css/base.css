@@ -72,7 +72,7 @@ body {
     z-index: -1;
 }
 
- #product-card-body {
+#product-card-body {
     height: 25px;
 } 
 
@@ -106,6 +106,10 @@ body {
     border-style: solid;
     border-width: 1px;
     border-color: #ff7369;
+}
+
+.text-color{
+    color: #ff7369;
 }
 /* -------------------------------- Media Queries */
 
