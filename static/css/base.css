@@ -38,6 +38,12 @@ body {
     color: white;
 }
 
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
 .sign-uo-btn:hover,
 .sign-up-btn:active,
 .sign-up-btn:focus,
@@ -85,6 +91,21 @@ body {
 
 .btt-link {
     cursor: pointer;
+}
+
+#nav a:hover {
+	transition: 0.1s;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: #ff7369;
+    text-decoration-thickness: 5px;
+
+}
+
+.img-border {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ff7369;
 }
 /* -------------------------------- Media Queries */
 
