@@ -18,6 +18,11 @@
             <hr class="w-50 mb-1">
         </div>
     </div>
+    <div class="col-12 col-md-6 order-md-first">
+        <p class="text-muted mt-3 text-center text-md-left">
+            {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+        </p>
+    </div>
     <div class="row">
         <div class="product-container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>
