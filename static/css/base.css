@@ -86,7 +86,9 @@ body {
     background-color: #ff7369;
 }
 
-.btt-link {
+.btt-link,
+.remove-item,
+.update-link {
     cursor: pointer;
 }
 
