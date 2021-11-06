@@ -37,13 +37,19 @@
   <body>
     <header class="container-fluid fixed-top">
       <div id= "topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-        <div class="col-8 s12 m8 offset-m2">
-          <a href="{% url 'home' %}" class="nav-link main-logo-link">
-            <h2 class="logo-font text-black my-0 center"><strong>ccwcreative</strong></h2>
+        <div class="col">
+            <a href="{% url 'home' %}">
+            <img src="/media/ccwlogo1.png" class="logo-img" alt="..."> 
+            </a>
+        </div>
+        <div class="col-md-auto s12 m8 offset-m2 text-right">
+          <a href="{% url 'home' %}" class="nav-link main-logo-link navbar-brand">
+            <h3 class="logo-font text-black my-0 center"><strong>ccwcreative</strong></h3>
           </a>
+          <hr>
         </div>
           <div class="col s12 m8 offset-m2">
-            <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+            <ul class="list-inline list-unstyled text-center text-lg-right my-0 mt-2">
                 <li class="list-inline-item dropdown">
                     <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="text-center">

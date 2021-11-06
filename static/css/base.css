@@ -3,13 +3,17 @@ html {
 }
 
 body {
-    background: url('/media/homepage.jpg') no-repeat center center fixed;;
+    background: url('/media/homepage1.jpg') no-repeat center center fixed;;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Playfair Display', serif;
 }
 
+.logo-img {
+    height: 90px;
+    width: 90px;
+}
 
 /* from Bulma */
 .icon {
