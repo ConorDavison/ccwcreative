@@ -14,8 +14,21 @@ d![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 * As a user, I want my own personal account to keep a track of order history and to have my details saved.
 * As a user, I want to be able to recover my password if it is forgotten so that I can reaccess my account.
 * As a user, I want to recieve a confirmation email when I sign up, so that I know my registration was successful.
+* As a user, I want the color scheme to be attractive and compliment the sites layout and images. 
 
 * As a shopper, I want to easily be able to view products
 * As a shopper, I want to be able to view individual product details so that I can access more details about the product.
 * As a shopper, I want to be able to view the total value of my current purchases at any time.
-* As a shopper, 
+* As a shopper, I want to be able to edit the quantity of items I wish to purchase easily.
+
+* As a returning user, I want to be able to log in to my account.
+* As a returning user, I want to be able to see a list of my order history. 
+* As a returning user, I want the site to save my default delivery information.
+* As a returning user, I want the site to pre-fill the delivery information on the checkout page when purchasing a product.
+
+* As a site owner, I want to be able to manage users, orders, products, and coupon codes.
+* As a site owner, I want to have superuser access to moderate the content.
+* As a site owner, I want to receive emails to notify me of questions/custom request asked via the contact form.
+*
+
+
