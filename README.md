@@ -20,6 +20,7 @@ d![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 * As a shopper, I want to be able to view individual product details so that I can access more details about the product.
 * As a shopper, I want to be able to view the total value of my current purchases at any time.
 * As a shopper, I want to be able to edit the quantity of items I wish to purchase easily.
+* As a shopper, I want to be able to sort the products by category.
 
 * As a returning user, I want to be able to log in to my account.
 * As a returning user, I want to be able to see a list of my order history. 
