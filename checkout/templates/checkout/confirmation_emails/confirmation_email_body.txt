@@ -1,0 +1,19 @@
+Hello {{ order.full_name }}!
+
+This is a little email to say your order has been recieved and is on its way:
+
+order: {{ order.order_number}}
+
+Order Total: ${{ order.order_total }}
+Delivery: ${{ order.delivery_cost }}
+Grand Total: ${{ order.grand_total }}
+
+Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+Sincerely,
+
+ccwcreative 
