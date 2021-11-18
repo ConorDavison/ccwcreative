@@ -235,6 +235,9 @@ body {
 }
 
 /* -------------------------------- footer */
+footer {
+    background-color: #fff;
+}
 
 footer a {
     height: 20px;
