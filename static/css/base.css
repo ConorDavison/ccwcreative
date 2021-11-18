@@ -234,6 +234,17 @@ body {
     overflow-y: auto;
 }
 
+/* -------------------------------- footer */
+
+footer a {
+    height: 20px;
+    color: #d47575;
+}
+
+footer a:hover {
+    color: #ff7369;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
