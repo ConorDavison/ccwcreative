@@ -263,6 +263,12 @@ body {
 }
 
 /* -------------------------------- footer */
+#footer {
+    margin-top: 25px;
+    bottom:0;
+    width:100%;
+}
+
 footer {
     background-color: #fff;
 }
