@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 
-def custom(request):
-    return render(request, 'custom.html')
+def contactForm(request):
+    return render(request, 'custom/custom_form.html')
