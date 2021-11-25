@@ -1,4 +1,4 @@
-d![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 
 ## Project Goals
@@ -32,10 +32,12 @@ d![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 * As a returning user, I want the site to save my default delivery information.
 * As a returning user, I want the site to pre-fill the delivery information on the checkout page when purchasing a product.
 
-# Site Owner
+#### Site Owner
 * As a site owner, I want to be able to manage users, orders, products, and customers wishlists..
 * As a site owner, I want to have superuser access to moderate the content.
 * As a site owner, I want to receive emails to notify me of questions/custom request asked via the contact form.
+
+
 
 
 
