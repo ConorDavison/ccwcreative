@@ -1,9 +1,13 @@
 from django.shortcuts import render
-from .models import Contact
 from django.contrib import messages
+from .models import Contact
 
 
 def contactForm(request):
+    """
+    A View for the contact form
+    """
+
     if request.method == "POST":
 
         contact = Contact()
