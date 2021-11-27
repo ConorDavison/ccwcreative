@@ -37,6 +37,11 @@
 * As a site owner, I want to have superuser access to moderate the content.
 * As a site owner, I want to receive emails to notify me of questions/custom request asked via the contact form.
 
+#### User Potential 
+* A user could be, someone who is looking to buy a small gift for a friend or relative.
+* A user could be, someone who is looking for insipiration for their own artwork.
+
+
 
 
 
