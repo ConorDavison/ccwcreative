@@ -4,6 +4,10 @@
 ## Project Goals
  * The aim of this app was to deliver a simple and consise site focused on an independent graphic designer based in Liverpool. The site will have an about section to get to know more about the designer themselves, whilst also having an ecommerce section to purchase exsisting designs and products. CCW-Creative will be responsive on all devices focusing on mobile first design, also ensuring visitors have a consistent user experience. This site will be aimed at users who are like-minded and have an interest in graphic design, potential customer and also potentail employers who would like to hire the designer for freelance work. Users will have the option to create an account if they wish to purchase any products, this will be to save information for any future potential purchases. All of this readily available information will be displayed clearly and in hierarchy of importance on each page. The navigation bar, which allows you to readily access specific information on the site, interactive features, internal website links showing the user further information on specific sites. The project aims to give the graphic designer an opportunity to show case their current portfolio and provide a platform to grow and network with customers and likeminded peers. The site will have a contact form which will also act as a method of discussing any personalised designs a customer may want.
 
+
+ ### Important!
+ * Any secret key found in the commits is now obscelete and useless, this has been changed and added to an env file. 
+
 ## User Stories
 
 ### User Goals
