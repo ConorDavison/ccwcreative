@@ -29,6 +29,14 @@
     - [Imagery](#Imagery)
     - [Wireframes](#Wireframes)
     - [Data Schema](#Data-Schema)
+  
+- [Features](#Features)
+- [Languages Used](#Languages-Used)
+  - [Frameworks](#Frameworks)
+  - [Libraries](#Libraries)
+
+- [Deployment](#Deployment)
+  - [Online Deployment](#Online-Deployment)
 
 
 
@@ -142,6 +150,181 @@
 ### Wireframes
 
 ### Data Schema
+
+# Features
+* Functioning Nav bar with working links.
+* Responsive images.
+* Buttons that utilise Jquery for further interactivity.
+* User Authentication.
+* Stripe Payment facilities.
+* Regular shoppers are able to purchase products just like registered users but do not have the same benefits.
+* The site owner is able to add, edit and delete products from the store.
+  - If a product is uploaded without an image then a default image is provided.
+* Each product has a name, SKU, category, description, stock and image.
+* All users are able to filter search for any product in the store.
+
+## Languages Used 
+* HTML5
+* CCS3
+* JavaScript
+* Python
+
+### Frameworks
+* Django 
+* Bootstrap
+* Font Awesome
+
+### Libraries
+* JQuery 
+
+# Deployment
+* For this I used Gitpod to deploy my project.
+
+* First create a heroku account and create a app - The name is up to you: mine was ccwcreative. Select a region closest to you - mine was Europe
+
+* This assumes you already have a Stripe account.
+
+* In heroku, under resources tab > Add-ons, search for postgress and add it. Select Hobby-Dev. as your plan - should be free
+
+* Go to settings and ensure there is a variable called "DATABASE_URL"
+* Product data needs to be imported
+
+* In the terminal type python3 manage.py loaddata categories.json followed by python3 manage.py loaddata products.json
+* Products depend on categories so order is important
+  create a super user
+
+* In the terminal type python3 manage.py createsuperuser
+  follow the prompt in the terminal to create the superuser
+* Create a Procfile for heroku
+
+* The context of the file should be web: gunicorn [Main app].wsgi:application - my main app is Gymshop
+* In the terminal run heroku login -i and login to your heroku account through the terminal
+
+* In settings.py > ALLOWED_HOSTS > add the heroku app URL and local host:
+
+* ALLOWED_HOSTS = ['[heroku app name].herokuapp.com', 'localhost']
+* Push code to Heroku - Note static files are not visible
+
+* initialize a heroku repository if not done so already
+* Instructions for this can be found under the Deploy tab in heroku
+* Add and commit using git
+* Then git push heroku master
+* Set up automatic deploys in heroku
+
+* Deploy tab > Deployment method > Github > Search for the repository > Enable automatic deploys > master branch
+* Set up a AWS account and initialise S3
+
+* Create a AWS account at amazon web services
+* My Account > AWS management console > Look for S3 - under recently visited service, the search bar or the find services search bar
+* Create bucket > Enter bucket name and region - name should be the same as heroku and region should be closest to you > Disable "Block  public access"
+* Acknowledge the bucket is public > Create bucket > Click on the bucket's hyperlink > Properties tab
+* Scroll down to Static Website Hosting > Edit > Static Website Hosting - enable > Hosting Type - Host a static website > Fill out default values > Save
+* Permissions tab > CORS configuration > add the following code and save:
+[
+    {
+        "AllowedHeaders": [
+            "Authorization"
+        ],
+        "AllowedMethods": [
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
+* Permissions tab > Bucket Policy > Edit > Policy Generator > a new tab will open
+  * Policy Type: S3
+  * Effect: Allow
+  * Principal: 
+  * Actions : GetObject*
+  * ARN: paste from previous tab
+* Add Statement > Generate Policy > Copy the Policy > go back to the previous tab and paste it in
+  * add /* at the end of the resource key > Save
+* Permissions tab > ACL > Public access > Tick "List" under the objects column
+* In the top Nav under Services > IAM > Groups > Create new group > name : manage-operation-gym > Next step > Next step > Create group
+* In the side Nav click Policies > Create Policy > JSON tab > Import managed Policy > search for: "AmazonS3FullAccess" > import
+* Create a list ([]) at the resource value and paste the ARN twice and append /* to the end of the second ARN (both are strings so "" is needed and need to be comma separated)
+  * ["ARN", "ARN/*"]
+* Next: tags > Next: Review > provide name and description > Create Policy
+* Side Nav, click on Groups > manage-operation-gym > Permissions tab > Attach Policy > search and select the policy that was created > Attach Policy
+* Side Nav, click on Users > Add User > enter a name for the user > Access type: Programmatic access > Next: permissions > Add user to Group > Next until the end > create user
+* Download the CSV file from the success page > click Close
+
+* Connect django to S3
+
+   * In settings.py > change the following code:
+     AWS_STORAGE_BUCKET_NAME = '[your bucket name]'
+     AWS_S3_REGION_NAME = '[your region]'
+
+   * Go to heroku > Settings > Config Vars > Add the following config vars:
+      * AWS_ACCESS_KEY_ID - (value found in the CSV file)
+      * AWS_SECRET_ACCESS_KEY - (value found in the CSV file)
+    * Rebuild the app and see the files appearing the S3 bucket
+    * Go to the S3 bucket > Create folder > name it media > upload the content of the media file > Set ACL public access to "read" in the objects column
+
+* Create email functionality
+
+In Gmail (due to its simplicity) got to Settings > See all settings > Accounts and import > other Google account settings
+A new tab will open. In the side nav, click Security > turn on 2 step verification > App Passwords
+"Select the app and device you want to generate the app password for" : other
+Add a custom name > Generate
+A window will appear with a key. Do not close this window. Copy the key to your clipboard
+In the config vars of the heroku app create 2 variables:
+EMAIL_HOST_PASS: The key generated by Gmail
+EMAIL_HOST_USER: your email address where the key was retrieved from
+In Heroku Config vars add your variables:
+
+DATABASE_URL - Should already by provided by Postgress
+DEVELOPMENT - Boolean - False
+SECRET_KEY - Provided by Django
+STRIPE_PUBLIC_KEY - Provided by Stripe - "Publishable key" on Stripe dashboard
+STRIPE_SECRET_KEY - Provided by Stripe - "Secret key" on Stripe dashboard
+STRIPE_WH_SECRET - Provided by Stripe - Developers > Webhooks > add an end point > select endpoint > Signing secret
+log in to stripe Stripe > Side Nav, click Developers > Webhooks > add endpoint > the endpoint is [URL of deployed site]/checkout/wh/ > receive all events > add endpoint
+Send a test webhook if this is successful. Sometimes it is slow to process this and a 401 error will appear but if you wait a few minutes it should work
+Login to the deployed site's admin (/admin) with admin login details and then verify the admin account
+
+Site is now fully deployed and is 100% functional
+
+Offline/Local Deployment
+In VSC , First clone the project from Github
+
+ git clone https://github.com/KeisGSmit/Gymshop.git
+Create a virtual environment in Windows. Navigate to where the project folder is and run:
+
+     python -m venv venv
+Activate the venv - Navigate to venv folder in the terminal window and inside run:
+
+     C:\Python\Django_Project_Name\venv>Scripts\activate
+If activation was successful, you should see the name of the virtual environment in curly braces in the front of the path:
+
+      (venv) C:\Python\Django_Project_Name\venv>
+Install packages needed for the project:
+
+     (venv) C:\Python\Django_Project_Name> pip install requirements.txt
+Create your superuser(admin)
+
+     python manage.py createsuper
+Run command:
+
+     python manage.py makemigrations
+Run command:
+
+     python manage.py migrate
+Create an env.py to store the env variables. The env variables needed for the project are: DATABASE_URL, SECRET_KEY, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, EMAIL_HOST_USER, EMAIL_HOST_PASS
+
+You will need your own S3 bucket for storing media.
+
+To generate a random key for SECRET_KEY, in CMD:
+
+    >>>import secrets
+    >>>secrets.token_hex(16)
+    >>>'15412c9e3e3ff5e03cac2270cc6fb57f'
+    >>>exit()
+
+
 
 
 
