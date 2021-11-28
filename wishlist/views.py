@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
+from django.shortcuts import (
+    render, redirect, get_list_or_404, get_object_or_404)
 
 from .models import Product, UserProfile, Wishlist, WishlistItem
 
@@ -47,13 +48,16 @@ def add_to_wishlist(request, product_id):
 
     product = Product.objects.get(pk=product_id)
     if request.POST:
-        test = WishlistItem.objects.filter(wishlist=wishlist_user, product=product).exists()
+        test = WishlistItem.objects.filter(
+            wishlist=wishlist_user, product=product).exists()
         if test:
             messages.error(request, "Product already in your wishlist")
             return redirect(redirect_url)
 
         else:
-            added_item = WishlistItem(wishlist=wishlist_user, product=product, date_added=timezone.now())
+            added_item = WishlistItem(
+                wishlist=wishlist_user,
+                product=product, date_added=timezone.now())
             added_item.save()
             messages.success(request, "Product added to your wishlist")
             return redirect(redirect_url)
@@ -74,7 +78,7 @@ def delete_from_wishlist(request, product_id):
     if request.POST:
         product = Product.objects.get(pk=product_id)
 
-        # look for product in the user's wishlistItem - returns true if it exists
+    # look for product in the user's wishlistItem - returns true if it exists
         test = WishlistItem.objects.filter(product=product).exists()
 
         if test:
@@ -84,7 +88,9 @@ def delete_from_wishlist(request, product_id):
             return redirect(redirect_url)
 
         if test is None:
-            messages.error(request, "You can not delete a item that is not in your wishlist")
+            messages.error(
+                request,
+                "You can not delete a item that is not in your wishlist")
             return redirect(redirect_url)
     else:
         messages.error(request, 'Item can only be deleted from your wishlist')
