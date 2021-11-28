@@ -325,9 +325,3 @@ body {
           height: calc(100vh - 130px);
       }
   }
-
-  @media (max-width: 383px) {
-        .mobile-menu {
-          height: 5px;
-      }
-  }
