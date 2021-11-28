@@ -1,1 +1,1 @@
-web: gunicorn ccwcreative.wsgi:application
+web: gunicorn ccw_creative.wsgi:application
