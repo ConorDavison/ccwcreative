@@ -8,6 +8,9 @@ body {
     height: calc(100vh - 164px);
     color: #555;
     font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 .logo-img {
@@ -264,16 +267,18 @@ body {
 
 /* -------------------------------- footer */
 
-footer {
+.footer {
     background-color: #fff;
+    margin-top: auto;
+
 }
 
-footer a {
-    height: 20px;
+.footer a {
+    font-size: 25px;
     color: #d47575;
 }
 
-footer a:hover {
+.footer a:hover {
     color: #ff7369;
 }
 
@@ -318,5 +323,12 @@ footer a:hover {
   
       body {
           height: calc(100vh - 130px);
+      }
+  }
+
+  @media (max-width: 385px) {
+        .mobile-menu a {
+          height: 15px;
+          margin-top: 5px;
       }
   }
