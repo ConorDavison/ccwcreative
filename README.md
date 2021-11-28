@@ -1,6 +1,8 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+# ccwcreative
 
+![Mockup](static/images/ccwcreative-mockup.png)
 
  ### Important!
  * Any secret key found in the commits is now obscelete and useless, this has been changed and added to an env file. 
@@ -37,6 +39,9 @@
 
 - [Deployment](#Deployment)
   - [Online Deployment](#Online-Deployment)
+
+- [Testing](#Testing)
+  - [Functionality Testing](#Functionality-Testing)
 
 
 
@@ -148,8 +153,11 @@
   The icons will be relevant to the different section headings of the site.
 
 ### Wireframes
+![Wireframes](static/images/wireframes.png)
+* The above wireframes represent all views of the site.
 
 ### Data Schema
+![DataSchema](static/images/dataschema.png)
 
 # Features
 * Functioning Nav bar with working links.
@@ -162,6 +170,8 @@
   - If a product is uploaded without an image then a default image is provided.
 * Each product has a name, SKU, category, description, stock and image.
 * All users are able to filter search for any product in the store.
+* There is a form that allows users to submit requests to the site owner, the user is also given an alert to confirm there 
+  has been recieved.
 
 ## Languages Used 
 * HTML5
@@ -291,7 +301,7 @@ Site is now fully deployed and is 100% functional
 Offline/Local Deployment
 In VSC , First clone the project from Github
 
- git clone https://github.com/KeisGSmit/Gymshop.git
+ git clone https://github.com/ConorDavison/ccwcreative.git
 Create a virtual environment in Windows. Navigate to where the project folder is and run:
 
      python -m venv venv
@@ -323,6 +333,55 @@ To generate a random key for SECRET_KEY, in CMD:
     >>>secrets.token_hex(16)
     >>>'15412c9e3e3ff5e03cac2270cc6fb57f'
     >>>exit()
+
+### How to run this project locally:
+
+- Install the GitPod Browser Extension for Chrome.
+- After installation, restart the browser.
+- Log into GitHub or create an account.
+- Locate the GitHub Repository.
+- Click the "GitPod" button. This will trigger a new gitPod workspace to be created from the code in github where you can work locally.
+
+### How to run this project within a local IDE, such as VSCode:
+
+  - Log into GitHub or create an account.
+  - Locate the GitHub Repository.
+  - Under the repository name, click "Clone or download".
+  - In the Clone with HTTPs section, copy the clone URL for the repository.
+  - In your local IDE open the terminal.
+  - Change the current working directory to the location where you want the cloned directory to be made.
+  - Type 'git clone', and then paste the URL you have copied.
+git clone https://github.com/USERNAME/REPOSITORY
+Press Enter. Your local clone will be created.
+(Further reading and troubleshooting on cloning a repository from GitHub here)
+
+# Testing
+
+## Functionality Testing
+* Clicking on "My Account" > Register - takes the user to the registration form.
+* Forcing URLs does not work as a unique key is attached to the link sent to the user
+* Forcing Other URLs will only generate the registration page, the login page and the home page
+
+### Login
+* Filling out the form successfully sends user to the home page and gives leaves them signed in.
+* Unsuccessful submissions will result in errors being shown.
+* Users are able to change their password if required.
+
+### Modifying/Adding to bag
+* No errors when testing this functionality of the site. Customers can select quantity and update bag - grand total adjusts accordingly.
+
+
+## Wishlist
+* To access this feature a user must be logged in. Forcing URLS (not logged in) will result in a Sign in page appearing
+* A signed in user can add a product to their wish list by clicking "Add to wishlist" - a success message will appear saying that the item  has been added to their wish list
+* The Add to Wishlist button is available on the products page or the product's details page.
+* A user is unable to add products through forcing URLs and will be redirected to the home page with a error message
+* Modifying wishlist produced no errors or known bugs.
+
+
+
+
+
 
 
 
