@@ -326,9 +326,8 @@ body {
       }
   }
 
-  @media (max-width: 385px) {
-        .mobile-menu a {
-          height: 15px;
-          margin-top: 5px;
+  @media (max-width: 383px) {
+        .mobile-menu {
+          height: 5px;
       }
   }
