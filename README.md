@@ -148,7 +148,7 @@
 * The font utilised for this app was the Playfiar font. This font has the serif typeface, therefore Sans Serif will be used as the fallback font in case there is an issue when importing the fonts, or browsers not supporting these. Font was imported via Google Fonts completement the simplicity of the design giving a visually pleasing user experience. This again, was also agreed with the designer.
 
 #### Imagery
-* Images used are all provided by the designer herself and all use of the images has been in agreement with the developer.  
+* Images used are all provided by the designer herself and all use of the images has been in agreement with the desinger.  
 * Font icons will be used throughout the website imported from [Font Awesome](https://fontawesome.com/). 
   These will be used to further emphasise the different sections of the website. 
   Using these icons adds a simple, effective and a subtle touch to the site that allows the user to understand what each section relates to. 
@@ -373,6 +373,9 @@ To generate a random key for SECRET_KEY, in CMD:
 git clone https://github.com/USERNAME/REPOSITORY
 Press Enter. Your local clone will be created.
 (Further reading and troubleshooting on cloning a repository from GitHub here)
+
+* After deploying I had to create a new superuser as the superuser credentials I used in the local environment no longer worked. 
+
 
 # Testing
 
