@@ -417,6 +417,12 @@ I was reluctant to use google lighthouse as a means of testing due to reading it
   > SEO = 87
   > Accessibility = 73.
 
+## Validators
+* HTML was passed through a validator - the only error I recieved was that an ID that was in a loop had been used more than once, after reviewing slack I noticed this is an error that can occur, the solution on slack was to mention it within the READme. In fear of not wanting to damage the code as it runs currently this was what I have devided to do. 
+* CSS was passed through the W3C validator. No errors.
+* JS - Passed through JSHint with no major issues some warnings to advise certain synatx is available in 'ES6 (use 'esversion: 6')'.
+* Python code has been passed through http://pep8online.com/, no concerns or errors.
+
 # Credits
 * Firstly, I would like to thank the graphic designer, Chloe Wilson, for trusting me to make this site using her products.
 * Code Institutes gitpod template was used to initially set the project up.
