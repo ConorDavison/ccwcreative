@@ -4,6 +4,8 @@
 
 ![Mockup](static/images/ccwcreative-mockup.png)
 
+* Live Site Can Be Viewed [Here](https://ccwcreative.herokuapp.com/)
+
  ### Important!
  * Any secret key found in the commits is now obscelete and useless, this has been changed and added to an env file. 
 
@@ -41,7 +43,8 @@
   - [Online Deployment](#Online-Deployment)
 
 - [Testing](#Testing)
-  - [Functionality Testing](#Functionality-Testing)
+
+- [Credits](#Credits)
 
 
 
@@ -120,6 +123,7 @@
 * A seciton that allows past customers to leave reviews.
 * An interactive blog or newsletter.
 * A rating system for products.
+* User recieves email when they submit a custom request as well, instead of an alert from within the site. This gives the user a paper trail of the custom request.
 
 ### Structure
 * Top level - 
@@ -129,9 +133,7 @@
     * There will be button elements that enable the user to navigate the content easily and simply.
     * Dependent on the page, there will be images with accompanying information for the user to discover.
     * Dependent on the page there will be an interative form allowing a user to submit requests and enquires for custom prints. 
-* Footer - 
-    * Copyright information stored here.
-    * Some internal links may also be added here.
+
 
 
 ### Design
@@ -146,17 +148,19 @@
 * The font utilised for this app was the Playfiar font. This font has the serif typeface, therefore Sans Serif will be used as the fallback font in case there is an issue when importing the fonts, or browsers not supporting these. Font was imported via Google Fonts completement the simplicity of the design giving a visually pleasing user experience. This again, was also agreed with the designer.
 
 #### Imagery
-* Images used purely for some asthetically pleasing design.  
+* Images used are all provided by the designer herself and all use of the images has been in agreement with the developer.  
 * Font icons will be used throughout the website imported from [Font Awesome](https://fontawesome.com/). 
   These will be used to further emphasise the different sections of the website. 
   Using these icons adds a simple, effective and a subtle touch to the site that allows the user to understand what each section relates to. 
   The icons will be relevant to the different section headings of the site.
 
 ### Wireframes
+* I Used Balsamiq to generate my Wireframes.
 ![Wireframes](static/images/wireframes.png)
 * The above wireframes represent all views of the site.
 
 ### Data Schema
+* ERD was used to create my dataschema.
 ![DataSchema](static/images/dataschema.png)
 
 # Features
@@ -169,9 +173,12 @@
 * The site owner is able to add, edit and delete products from the store.
   - If a product is uploaded without an image then a default image is provided.
 * Each product has a name, SKU, category, description, stock and image.
-* All users are able to filter search for any product in the store.
+* All users are able to filter any product in the store.
 * There is a form that allows users to submit requests to the site owner, the user is also given an alert to confirm there 
   has been recieved.
+* A custom form is also an option for users that have specific request for the designer.
+* A wishlist functionality has been provided for user that wish to 'save' items they would maybe wish to purchase in the future. User authentication is needed for this function.
+
 
 ## Languages Used 
 * HTML5
@@ -185,7 +192,19 @@
 * Font Awesome
 
 ### Libraries
-* JQuery 
+* JQuery
+
+* All dependancies can be found in the requirements.txt file.
+
+### Git
+* Was used for version control to commit to Git and push to Heroku.
+
+### Heroku 
+* Heroku was used in order to deploy the website.
+
+### AWS 
+* This was used to host all static files for the site.
+
 
 # Deployment
 * For this I used Gitpod to deploy my project.
@@ -359,13 +378,23 @@ Press Enter. Your local clone will be created.
 
 ## Functionality Testing
 * Clicking on "My Account" > Register - takes the user to the registration form.
-* Forcing URLs does not work as a unique key is attached to the link sent to the user
-* Forcing Other URLs will only generate the registration page, the login page and the home page
+* Forcing URLs does not work as a unique key is attached to the link sent to the user.
+* Forcing Other URLs will only generate the registration page, the login page and the home page.
+
+## Combatability Testing
+*  The site has been tested across multiple virtual mobile devices and browsers. I checked all supported devices in both Mozilla web developer tools and Chrome developer tools.
 
 ### Login
 * Filling out the form successfully sends user to the home page and gives leaves them signed in.
 * Unsuccessful submissions will result in errors being shown.
 * Users are able to change their password if required.
+
+### Logout
+* Only a user that is logged in can use this
+* Under "My Account" > Logout
+* This takes users to a sign out page where they can click "Cancel" or "Sign Out"
+* Clicking cancel redirects the user to the home page and they are still logged in
+* Clicking sign out redirects the user to the homepage and they are logged out.
 
 ### Modifying/Adding to bag
 * No errors when testing this functionality of the site. Customers can select quantity and update bag - grand total adjusts accordingly.
@@ -377,6 +406,23 @@ Press Enter. Your local clone will be created.
 * The Add to Wishlist button is available on the products page or the product's details page.
 * A user is unable to add products through forcing URLs and will be redirected to the home page with a error message
 * Modifying wishlist produced no errors or known bugs.
+
+## Emails
+* Emails have been tested via Tempmail.org. Confirmation email of purchase recieved successfully as well as email to verify new account.
+
+## Google Lighthouse
+I was reluctant to use google lighthouse as a means of testing due to reading it can be incredibly inconsistent. Nonetheless, I have included the scores from the generated report:-
+  > Best Practices = 100
+  > Performance = 89
+  > SEO = 87
+  > Accessibility = 73.
+
+# Credits
+* Firstly, I would like to thank the graphic designer, Chloe Wilson, for trusting me to make this site using her products.
+* Code Institutes gitpod template was used to initially set the project up.
+* Code Institute for always being on hand to offer constructive advice when I faced any issues.
+* I got the inspiration to make this project as I used some of the styling and functionality applied on it from code institute "Project - Boutique Ado"
+
 
 
 
